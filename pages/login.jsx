@@ -8,15 +8,37 @@ import Footer from "../src/components/Footer";
 const Login = () => {
   const navigate = useNavigate();
 
+  // State for email, password, and validation
+  const [email, setEmail] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [error, setError] = useState("");
+
+  // Handle login click
   const handleLoginClick = (e) => {
     e.preventDefault();
-    navigate("/sign-up");
+
+    if (validateEmail(email)) {
+      navigate("/sign-up");
+    } else {
+      setError("Please enter a valid email.");
+    }
   };
 
-  const [passwordVisible, setPasswordVisible] = useState(false);
-
+  // Handle password visibility toggle
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
+  };
+
+  // Handle email change
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    setError("");
+  };
+
+  // Email validation regex
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   return (
@@ -47,7 +69,21 @@ const Login = () => {
                 type="email"
                 placeholder="Email Address"
                 className="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"
+                value={email}
+                onChange={handleEmailChange}
               />
+              {error && (
+                <p
+                  className="text-red-500 text-sm"
+                  style={{
+                    color: "red",
+                    marginTop: "-1.6rem",
+                    marginLeft: "8rem",
+                  }}
+                >
+                  {error}
+                </p>
+              )}
             </div>
 
             <br />
@@ -127,4 +163,5 @@ const Login = () => {
     </div>
   );
 };
+
 export default Login;
