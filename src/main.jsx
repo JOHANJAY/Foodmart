@@ -8,8 +8,33 @@ import LandingPageLayout from "./layout/LandingPageLayout.jsx";
 import Vendors from "./routes/Vendors.jsx";
 import About from "./routes/About.jsx";
 import Contact from "./routes/Contact.jsx";
+import Login from "../pages/login.jsx";
+import Order from "../pages/Order.jsx";
+import MyCart from "../pages/myCart.jsx";
+import Favourites from "../pages/Favourites.jsx";
+import Header from "./components/Header";
+import HeaderSignUp from "./components/HeaderSignUp.jsx";
+import SignUp from "../pages/signUp.jsx";
 
 const router = createBrowserRouter([
+  {
+    path: "/login",
+    element: (
+      <>
+        <HeaderSignUp />
+        <Login />
+      </>
+    ),
+  },
+  {
+    path: "/sign-up",
+    element: (
+      <>
+        <HeaderSignUp />
+        <SignUp />
+      </>
+    ),
+  },
   {
     path: "/",
     element: <LandingPageLayout />,
@@ -33,6 +58,18 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/favourites",
+        element: <Favourites />,
+      },
+      {
+        path: "/order",
+        element: <Order />,
+      },
+      {
+        path: "/my-cart",
+        element: <MyCart />,
       },
     ],
   },
