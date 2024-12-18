@@ -1,518 +1,192 @@
 import { imageAssets } from "../assets";
 import { TbCurrencyNaira } from "react-icons/tb";
 import { getRatingStar } from "./Arrays";
+import AddBtn from "../components/AddBtn";
 
 export const data = [
   {
-    img: <img src={imageAssets.avocado} className="w-44 mb-1" alt="Avocado" />,
+    imgSrc: imageAssets.avocado,
     title: "Avocado",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "fruits",
   },
   {
-    img: <img src={imageAssets.cauliflower} className="w-44 mb-1" alt="Cauliflower" />,
+    imgSrc: imageAssets.cauliflower,
     title: "Cauliflower",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "vegetables",
   },
   {
-    img: <img src={imageAssets.chineseCabbage} className="w-44 mb-1" alt="Chinese Cabbage" />,
+    imgSrc: imageAssets.chineseCabbage,
     title: "Chinese Cabbage",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "vegetables",
   },
   {
-    img: <img src={imageAssets.cucumber} className="w-44 mb-1" alt="Cucumber" />,
+    imgSrc: imageAssets.cucumber,
     title: "Cucumber",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
+    price: 1000,
+    rating: 4,
     category: "vegetables",
   },
   {
-    img: <img src={imageAssets.eggplants} className="w-44 mb-1" alt="Eggplant" />,
+    imgSrc: imageAssets.eggplants,
     title: "Eggplants",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "vegetables",
   },
   {
-    img: <img src={imageAssets.grapes} className="w-44 mb-1" alt="Grapes" />,
+    imgSrc: imageAssets.grapes,
     title: "Grapes",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "fruits",
   },
   {
-    img: <img src={imageAssets.greenApples} className="w-44 mb-1" alt="Green Apples" />,
+    imgSrc: imageAssets.greenApples,
     title: "Green Apples",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "fruits",
   },
   {
-    img: <img src={imageAssets.greenCapsicum} className="w-44 mb-1" alt="Green Capsicum" />,
+    imgSrc: imageAssets.greenCapsicum,
     title: "Green Capsicum",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "vegetables",
   },
   {
-    img: <img src={imageAssets.greenChili} className="w-44 mb-1" alt="Green Chilli" />,
+    imgSrc: imageAssets.greenChili,
     title: "Green Chilli",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "vegetables",
   },
   {
-    img: <img src={imageAssets.lettuce} className="w-44 mb-1" alt="Lettuce" />,
+    imgSrc: imageAssets.lettuce,
     title: "Lettuce",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "vegetables",
   },
   {
-    img: <img src={imageAssets.maize} className="w-44 mb-1" alt="Maize" />,
+    imgSrc: imageAssets.maize,
     title: "Maize",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "vegetables",
   },
   {
-    img: <img src={imageAssets.mangos} className="w-44 mb-1" alt="Mango" />,
+    imgSrc: imageAssets.mangos,
     title: "Mango",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "fruits",
   },
   {
-    img: <img src={imageAssets.okra} className="w-44 mb-1" alt="Okra" />,
+    imgSrc: imageAssets.okra,
     title: "Okra",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "vegetables",
   },
   {
-    img: <img src={imageAssets.orange} className="w-44 mb-1" alt="Orange" />,
+    imgSrc: imageAssets.orange,
     title: "Orange",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "fruits",
   },
   {
-    img: <img src={imageAssets.peach} className="w-44 mb-1" alt="Peach" />,
+    imgSrc: imageAssets.peach,
     title: "Peach",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "fruits",
   },
   {
-    img: <img src={imageAssets.pineapple} className="w-44 mb-1" alt="Pineapple" />,
+    imgSrc: imageAssets.pineapple,
     title: "Pineapple",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "fruits",
   },
   {
-    img: <img src={imageAssets.pomegranate} className="w-44 mb-1" alt="Pomegranate" />,
+    imgSrc: imageAssets.pomegranate,
     title: "Pomegranate",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "fruits",
   },
   {
-    img: <img src={imageAssets.potatos} className="w-44 mb-1" alt="Potatos" />,
+    imgSrc: imageAssets.potatos,
     title: "Potatos",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "vegetables",
   },
   {
-    img: <img src={imageAssets.rasberries} className="w-44 mb-1" alt="Rasberries" />,
+    imgSrc: imageAssets.rasberries,
     title: "Rasberries",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "fruits",
   },
   {
-    img: <img src={imageAssets.redCapsicum} className="w-44 mb-1" alt="Red Capsicum" />,
+    imgSrc: imageAssets.redCapsicum,
     title: "Red Capsicum",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "vegetables",
   },
   {
-    img: <img src={imageAssets.redChili} className="w-44 mb-1" alt="Red Chilli" />,
+    imgSrc: imageAssets.redChili,
     title: "Red Chilli",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "vegetables",
   },
   {
-    img: <img src={imageAssets.tomatos} className="w-44 mb-1" alt="Tomatos" />,
+    imgSrc: imageAssets.tomatos,
     title: "Tomatos",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "vegetables",
   },
   {
-    img: <img src={imageAssets.strawberries} className="w-44 mb-1" alt="Stawberries" />,
+    imgSrc: imageAssets.strawberries,
     title: "Stawberries",
-    price: (
-      <div className="flex items-center font-bold">
-        <TbCurrencyNaira />
-        1000
-      </div>
-    ),
-    rating: (
-      <div className="flex space-x-1">
-        <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(4)}</div>
-        <div className="flex space-x-1 text-[#ccc]">{getRatingStar(1)}</div>
-      </div>
-    ),
-    button: (
-      <button className="px-3 text-xs border border-purple-800 text-purple-800 font-bold">
-        ADD
-      </button>
-    ),
+    price: 1000,
+    rating: 4,
     category: "fruits",
   },
 ];
+
+const renderPrice = (price) => (
+  <div className="flex items-center font-bold">
+    <TbCurrencyNaira />
+    {price}
+  </div>
+);
+
+const renderRating = (rating) => (
+  <div className="flex space-x-1">
+    <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(rating)}</div>
+    <div className="flex space-x-1 text-[#ccc]">{getRatingStar(5 - rating)}</div>
+  </div>
+);
+const renderData = data.map((item) => ({
+  img: <img src={item.imgSrc} className="w-44 mb-1" alt={item.title} />,
+  title: item.title,
+  price: renderPrice(item.price),
+  rating: renderRating(item.rating),
+  button: <AddBtn />,
+  category: item.category,
+}));
+
+export default renderData;

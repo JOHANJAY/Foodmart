@@ -1,75 +1,142 @@
-import { StrictMode } from "react";
+// Refactored Main File with Routes and Suspense
+import { StrictMode, lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./routes/App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Categories from "./routes/Category/Categories.jsx";
-import LandingPageLayout from "./layout/LandingPageLayout.jsx";
-import Vendors from "./routes/Vendors.jsx";
-import About from "./routes/About.jsx";
-import Contact from "./routes/Contact.jsx";
-import Login from "../pages/login.jsx";
-import Order from "../pages/Order.jsx";
-import MyCart from "../pages/myCart.jsx";
-import Favourites from "../pages/Favourites.jsx";
-import Header from "./components/Header";
-import HeaderSignUp from "./components/HeaderSignUp.jsx";
-import SignUp from "../pages/signUp.jsx";
+import "./index.css";
+
+const App = lazy(() => import("./routes/App.jsx"));
+const Categories = lazy(() => import("./routes/Category/Categories.jsx"));
+const LandingPageLayout = lazy(() => import("./layout/LandingPageLayout.jsx"));
+const Vendors = lazy(() => import("./routes/Vendors.jsx"));
+const About = lazy(() => import("./routes/About.jsx"));
+const Contact = lazy(() => import("./routes/Contact.jsx"));
+const Login = lazy(() => import("../pages/login.jsx"));
+const Order = lazy(() => import("../pages/Order.jsx"));
+const MyCart = lazy(() => import("../pages/myCart.jsx"));
+const Favourites = lazy(() => import("../pages/Favourites.jsx"));
+const SignUp = lazy(() => import("../pages/signUp.jsx"));
+const ProductDetails = lazy(() =>
+  import("./routes/Category/ProductsDetails.jsx")
+);
+const HeaderSignUp = lazy(() => import("./components/HeaderSignUp.jsx"));
+
+const LoadingFallback = () => <div>Loading...</div>;
 
 const router = createBrowserRouter([
   {
     path: "/login",
     element: (
-      <>
-        <HeaderSignUp />
-        <Login />
-      </>
+      <Suspense fallback={<LoadingFallback />}>
+        <>
+          <HeaderSignUp />
+          <Login />
+        </>
+      </Suspense>
     ),
   },
   {
     path: "/sign-up",
     element: (
-      <>
-        <HeaderSignUp />
-        <SignUp />
-      </>
+      <Suspense fallback={<LoadingFallback />}>
+        <>
+          <HeaderSignUp />
+          <SignUp />
+        </>
+      </Suspense>
     ),
   },
   {
     path: "/",
-    element: <LandingPageLayout />,
+    element: (
+      <Suspense fallback={<LoadingFallback />}>
+        <LandingPageLayout />
+      </Suspense>
+    ),
     children: [
       {
         path: "/",
-        element: <App />,
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <App />
+          </Suspense>
+        ),
       },
       {
-        path: "/categories",
-        element: <Categories />,
+        path: "categories",
+        children: [
+          {
+            path: "",
+            element: (
+              <Suspense fallback={<LoadingFallback />}>
+                <Categories />
+              </Suspense>
+            ),
+          },
+          {
+            path: ":category",
+            element: (
+              <Suspense fallback={<LoadingFallback />}>
+                <Categories />
+              </Suspense>
+            ),
+          },
+          {
+            path: ":category/:productId",
+            element: (
+              <Suspense fallback={<LoadingFallback />}>
+                <ProductDetails />
+              </Suspense>
+            ),
+          },
+        ],
       },
       {
-        path: "/vendors",
-        element: <Vendors />,
+        path: "vendors",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <Vendors />
+          </Suspense>
+        ),
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "about",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <About />
+          </Suspense>
+        ),
       },
       {
-        path: "/contact",
-        element: <Contact />,
+        path: "contact",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
-        path: "/favourites",
-        element: <Favourites />,
+        path: "favourites",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <Favourites />
+          </Suspense>
+        ),
       },
       {
-        path: "/order",
-        element: <Order />,
+        path: "order",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <Order />
+          </Suspense>
+        ),
       },
       {
-        path: "/my-cart",
-        element: <MyCart />,
+        path: "my-cart",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <MyCart />
+          </Suspense>
+        ),
       },
     ],
   },

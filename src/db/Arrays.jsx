@@ -1,10 +1,22 @@
 import { imageAssets } from "../assets";
 import { FaStar } from "react-icons/fa6";
 import { TbCurrencyNaira } from "react-icons/tb";
+import { IoIosCheckmarkCircle } from "react-icons/io";
 
 export const getRatingStar = (rating) => {
   return Array.from({ length: rating }, (_, index) => <FaStar key={index} />);
 };
+
+const renderRating = (rating) => (
+  <div className="flex space-x-1">
+    <div className="flex space-x-1 text-[#ff8a00]">{getRatingStar(rating)}</div>
+    <div className="flex space-x-1 text-[#ccc]">
+      {getRatingStar(5 - rating)}
+    </div>
+  </div>
+);
+
+renderRating();
 
 export const premiumSubs = [
   {
@@ -174,4 +186,71 @@ export const tags = [
   "Dinner",
   "Breakfasr",
   "Fruit",
+];
+
+export const labels = ["All", "Vegetables", "Fruits", "Grain"];
+
+export const tabs = [
+  {
+    id: 1,
+    title: "Description",
+    content: (
+      <div className="flex flex-col gap-3 font-light">
+        <p>Grapes are Fruits</p>
+        <div>
+          {Array.from({ length: 5 }, (_, index) => (
+            <div key={index} className="flex items-center">
+              <IoIosCheckmarkCircle className="text-green-500" />
+              <span className="ml-2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, quod.
+              </span>
+            </div>
+          ))}
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus
+          aliquid enim animi ducimus ex quod libero recusandae repudiandae
+          dolorum? Doloribus laudantium aut reiciendis dignissimos aspernatur!
+          Labore iure quas dolore quod!
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: 2,
+    title: "Available Vendors",
+    content: (
+      <div className="flex gap-10">
+        <img src={imageAssets.Amys} className="w-64 h-60 " alt="Amys" />
+        <img src={imageAssets.Foa} className="w-64 h-60 " alt="" />
+      </div>
+    ),
+  },
+  {
+    id: 3,
+    title: "Customer Reviews",
+    content: (
+      <div>
+        <div className="flex gap-3">
+          <img src={imageAssets.Amys} className="w-14" alt="Amys" />
+          <div className="flex space-x-2 items-center">
+            <img
+              src={imageAssets.Profile}
+              alt="Profile"
+              className="w-14"
+              srcset=""
+            />
+            <div>
+              <p className="font-bold">Kemi</p>
+              {renderRating(4)}
+            </div>
+          </div>
+        </div>
+        <p className="font-light">
+          I got my produce from Amy Foods, and I dont regret it one bit.
+        </p>
+      </div>
+    ),
+  },
 ];

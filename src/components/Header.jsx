@@ -2,19 +2,22 @@ import { NavLink, Link } from "react-router-dom";
 import Searchbar from "./search/Searchbar";
 import BannerImg from "./BannerImg";
 import Logo from "./Logo";
-import cart from "../assets/img/cart.png"
-import dropdown from "../assets/img/dropdown.png"
-import favourites from "../assets/img/favourites.png"
-import home from "../assets/img/home.png"
-import order from "../assets/img/order.png"
+import cart from "../assets/img/cart.png";
+import dropdown from "../assets/img/dropdown.png";
+import favourites from "../assets/img/favourites.png";
+import home from "../assets/img/home.png";
+import order from "../assets/img/order.png";
+import { svgAssets } from "../assets";
 
 const Header = () => {
   return (
     <nav className="fixed top-0 bg-white">
-      <div className="w-screen h-12 px-5 flex items-center border-b-4 border-gray-300 bg-white gap-6">
-        <Logo />
-        <div>
-          <Searchbar />
+      <div className="w-screen h-12 px-5 flex items-center justify-between border-b-4 border-gray-300 bg-white gap-6">
+        <div className="flex gap-24">
+          <Logo />
+          <div>
+            <Searchbar />
+          </div>
         </div>
         <div>
           <ul className="flex gap-10">
@@ -22,26 +25,22 @@ const Header = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive
-                    ? "font-semibold text-lg "
-                    : "font-semibold text-lg "
+                  isActive ? "font-semibold text-lg " : "font-semibold text-lg "
                 }
               >
-                <div className="flex gap-2 " style={{ alignItems:"center"}}>
-
-              <img src={home } className="w-5 h-4 align-bottom" />  Home
-              </div>
+                <div className="flex gap-2 " style={{ alignItems: "center" }}>
+                  <img src={home} className="w-5 h-4 align-bottom" /> Home
+                </div>
               </NavLink>
             </li>
             <li>
               <NavLink
                 to="/categories"
                 className={({ isActive }) =>
-                  isActive
-                    ? "font-semibold text-lg "
-                    : "font-semibold text-lg "
+                  isActive ? "font-semibold text-lg flex" : "font-semibold text-lg flex"
                 }
               >
+                <img src={svgAssets.Vector} alt="" className="w-4 mr-2" />
                 Categories
               </NavLink>
             </li>
@@ -49,13 +48,12 @@ const Header = () => {
               <NavLink
                 to="/favourites"
                 className={({ isActive }) =>
-                  isActive
-                    ? "font-semibold text-lg"
-                    : "font-semibold text-lg "
+                  isActive ? "font-semibold text-lg" : "font-semibold text-lg "
                 }
               >
-                <div className="flex gap-2 " style={{ alignItems:"center"}}>
-                <img src={favourites} className="w-5 h-4 align-bottom" />Favourite 
+                <div className="flex gap-2 " style={{ alignItems: "center" }}>
+                  <img src={favourites} className="w-5 h-4 align-bottom" />
+                  Favourite
                 </div>
               </NavLink>
             </li>
@@ -63,13 +61,12 @@ const Header = () => {
               <NavLink
                 to="/order"
                 className={({ isActive }) =>
-                  isActive
-                    ? "font-semibold text-lg"
-                    : "font-semibold text-lg "
+                  isActive ? "font-semibold text-lg" : "font-semibold text-lg "
                 }
               >
-                 <div className="flex gap-2 " style={{ alignItems:"center"}}>
-                <img src={order} className="w-5 h-4 align-bottom" />Order
+                <div className="flex gap-2 " style={{ alignItems: "center" }}>
+                  <img src={order} className="w-5 h-4 align-bottom" />
+                  Order
                 </div>
               </NavLink>
             </li>
@@ -77,13 +74,12 @@ const Header = () => {
               <NavLink
                 to="/my-cart"
                 className={({ isActive }) =>
-                  isActive
-                    ? "font-semibold text-lg"
-                    : "font-semibold text-lg "
+                  isActive ? "font-semibold text-lg" : "font-semibold text-lg "
                 }
               >
-                 <div className="flex gap-2 " style={{ alignItems:"center"}}>
-                <img src={cart} className="w-5 h-4 align-bottom" />MyCart
+                <div className="flex gap-2 " style={{ alignItems: "center" }}>
+                  <img src={cart} className="w-5 h-4 align-bottom" />
+                  MyCart
                 </div>
               </NavLink>
             </li>
@@ -91,21 +87,18 @@ const Header = () => {
               <NavLink
                 to="/login"
                 className={({ isActive }) =>
-                  isActive
-                    ? "font-semibold text-lg"
-                    : "font-semibold text-lg "
+                  isActive ? "font-semibold text-lg" : "font-semibold text-lg "
                 }
               >
-                 <div className="flex gap-2 " style={{ alignItems:"center"}}>
-                Login<img src={dropdown} className="w-4 h-2 align-bottom" />
+                <div className="flex gap-2 " style={{ alignItems: "center" }}>
+                  Login
+                  <img src={dropdown} className="w-4 h-2 align-bottom" />
                 </div>
               </NavLink>
             </li>
           </ul>
         </div>
       </div>
-
-
 
       <BannerImg />
     </nav>

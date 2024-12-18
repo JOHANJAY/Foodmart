@@ -3,7 +3,7 @@ import { imageAssets } from "../assets";
 
 const Hero = () => {
   return (
-    <section className="w-screen mt-3 bg-gray-300 flex items-center gap-9">
+    <section className="w-screen mt-3 bg-gray-300 flex items-center justify-between gap-9">
       <div className="pl-5">
         <h1 className="pb-10 font-bold italic text-2xl text-center">
           Be a premium subscriber and enjoy the following perks
@@ -20,7 +20,7 @@ const Hero = () => {
         </div>
       </div>
       <div>
-        <img src={imageAssets.EllaOlssonhero} alt="Hero Image" className="w-80 h-52" />
+        <img src={imageAssets.EllaOlssonhero} alt="Hero Image" className="w-80 h-56" />
       </div>
     </section>
   );
